@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Cutieee Bandariya 👀</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+/* 🌈 Animated Background */
+body{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+  overflow:hidden;
+}
+
+/* 💫 Floating soft bubbles */
+.bg span{
+  position:absolute;
+  width:18px;
+  height:18px;
+  background:rgba(255,255,255,0.25);
+  border-radius:50%;
+  animation:floatBg 20s linear infinite;
+}
+
+@keyframes floatBg{
+  from{transform:translateY(100vh) scale(0.6);}
+  to{transform:translateY(-10vh) scale(1.4);}
+}
+
+/* 💎 Glass Card */
+.card{
+  backdrop-filter:blur(16px);
+  background:rgba(255,255,255,0.75);
+  padding:32px;
+  border-radius:26px;
+  text-align:center;
+  width:90%;
+  max-width:370px;
+  animation:pop 1s ease, heartbeat 2.6s ease-in-out infinite;
+  box-shadow:0 0 40px rgba(255,105,135,0.45);
+  z-index:2;
+}
+
+@keyframes pop{
+  from{transform:scale(0.7);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+
+@keyframes heartbeat{
+  0%,100%{transform:scale(1);}
+  25%{transform:scale(1.04);}
+  50%{transform:scale(1);}
+  75%{transform:scale(1.05);}
+}
+
+h1{
+  font-size:25px;
+  color:#ff4d6d;
+  margin-bottom:18px;
+}
+
+/* 💗 Button */
+button{
+  background:linear-gradient(135deg,#ff4d6d,#ff758f);
+  color:#fff;
+  border:none;
+  padding:13px 28px;
+  border-radius:30px;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.35s;
+  margin-top:16px;
+  box-shadow:0 8px 20px rgba(255,77,109,0.45);
+}
+
+button:hover{
+  transform:scale(1.08);
+}
+
+/* 🌸 Message Box */
+.message{
+  display:none;
+  margin-top:24px;
+  padding:22px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#fff0f4,#ffe6ec);
+  font-size:14.6px;
+  color:#444;
+  line-height:1.9;
+  animation:fadeIn 1.6s ease, glow 4s infinite;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(18px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes glow{
+  0%,100%{box-shadow:0 0 18px rgba(255,182,193,0.45);}
+  50%{box-shadow:0 0 35px rgba(255,182,193,0.75);}
+}
+
+/* ✨ Floating Emojis */
+.float{
+  position:absolute;
+  font-size:22px;
+  animation:floatEmoji linear infinite;
+  pointer-events:none;
+}
+
+@keyframes floatEmoji{
+  from{transform:translateY(0) rotate(0deg);opacity:1;}
+  to{transform:translateY(-110vh) rotate(360deg);opacity:0;}
+}
+
+/* 🌙 Goodbye Screen */
+.goodbye{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle,#2c2c2c,#000);
+  color:#ffb6c1;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  animation:slowGoodbye 3s ease forwards;
+}
+
+@keyframes slowGoodbye{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+.goodbye h2{
+  font-size:36px;
+  letter-spacing:3px;
+  margin-bottom:10px;
+}
+
+.goodbye p{
+  font-size:14px;
+  opacity:0.8;
+}
+
+/* ⭐ Stars */
+.star{
+  position:absolute;
+  color:white;
+  font-size:8px;
+  animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+  from{opacity:0.2;}
+  to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🌈 Background Bubbles -->
+<div class="bg">
+  <span style="left:10%;animation-duration:18s"></span>
+  <span style="left:30%;animation-duration:22s"></span>
+  <span style="left:55%;animation-duration:20s"></span>
+  <span style="left:75%;animation-duration:26s"></span>
+  <span style="left:90%;animation-duration:24s"></span>
+</div>
+
+<div class="card" id="mainCard">
+  <h1>Hey Cutieee Bandariya 👀</h1>
+  <button id="tapBtn" onclick="showLove()">Tap Me 💗</button>
+
+  <div class="message" id="hiddenMsg">
+    <strong>Dear Bandariya Diduuu… 😇</strong><br><br>
+
+    Forever thankful for a bond jo sirf friend se kahin zyada hai —  
+    Aap ❤️ se meri behen ho.👻<br><br>
+
+    Mere liye kuch karna hai to bas apna khayal rakhna 🤗  
+    aur har kadam pe apne sapno ko priority dena ✨<br><br>
+
+    I will always miss you bcoz  
+    aap jaise mujhe smile karana  
+    kisi aur ko nahi aata… 🥹💗<br><br>
+
+    <strong>Miss you forever.. 👻</strong><br><br>
+
+    <button onclick="finalGoodbye()">One Last Tap 🌙</button>
+  </div>
+</div>
+
+<div class="goodbye" id="goodbyeScreen">
+  <h2>Byeeeeeee 🤍</h2>
+  <p>Some bonds never fade… ✨</p>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_5c8c8c0d6b.mp3">
+</audio>
+
+<script>
+let musicInterval;
+
+function showLove(){
+  tapBtn.style.display="none";
+  hiddenMsg.style.display="block";
+
+  bgMusic.volume=0.12;
+  bgMusic.play();
+
+  musicInterval=setInterval(()=>{
+    bgMusic.volume=Math.min(0.3,bgMusic.volume+0.01);
+  },1200);
+
+  setInterval(()=>{
+    const emojis=["💗","❤️","✨","⭐","😊","🌸"];
+    const el=document.createElement("div");
+    el.className="float";
+    el.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left=Math.random()*100+"vw";
+    el.style.bottom="0";
+    el.style.animationDuration=(Math.random()*4+5)+"s";
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),9000);
+  },600);
+}
+
+function finalGoodbye(){
+  clearInterval(musicInterval);
+
+  let fade=setInterval(()=>{
+    if(bgMusic.volume>0.02){
+      bgMusic.volume-=0.02;
+    }else{
+      bgMusic.pause();
+      clearInterval(fade);
+    }
+  },200);
+
+  mainCard.style.opacity="0";
+  mainCard.style.transform="scale(0.9)";
+
+  setTimeout(()=>{
+    mainCard.style.display="none";
+    goodbyeScreen.style.display="flex";
+
+    for(let i=0;i<50;i++){
+      const s=document.createElement("div");
+      s.className="star";
+      s.innerHTML="✦";
+      s.style.left=Math.random()*100+"vw";
+      s.style.top=Math.random()*100+"vh";
+      goodbyeScreen.appendChild(s);
+    }
+  },2600);
+}
+</script>
+
+</body>
+  </html>
